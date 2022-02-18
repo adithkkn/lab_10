@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="railways.js"></script>
+    
+</head>
+<body ng-controller="myctrl" style="background-image:url('railway.jpg'); background-repeat: no-repeat; background-size:100% 180%;">
+  <h1 style="color: azure;">BOOKING AND PAYMENT DETAILS</h1>
+    <table cellpadding="2" cellspacing="2" border="1" style="background-color: #fc9d0e">
+        <tr>
+            <th>ID
+                <br>
+                <input type="text" ng-model="search.id">
+            </th>
+            <th>Passengername
+                <br>
+                <input type="text" ng-model="search.Passengername">
+            </th>
+            <th>Trainno
+                <br>
+                <input type="text" ng-model="search.trainno">
+            </th>
+            <th>source/destination
+                <br>
+                <input type="text" ng-model="search.source_destination">
+            </th>
+            <th>Ticketprice
+                <br>
+                <input type="text" ng-model="search.Ticketprice">
+            </th>
+            <th>bookingstatus
+              <br>
+              <input type="text" ng-model="search.bookingstatus">
+            </th>
+            <th>Bookdate
+              <br>
+              <input type="text" ng-model="search.Bookdate">
+            </th>
+        </tr>
+        <tr ng-repeat="item in names">
+            <td>{{item.id}}</td>
+            <td>{{item.Passengername|uppercase}}</td>
+            <td>{{item.trainno}}</td>
+            <td>{{item.source_destination|uppercase}}</td>
+            <td>{{item.Ticketprice|currency:"₹"}}</td>
+            <td>{{item.bookingstatus}}</td>
+            <td>{{item.Bookdate|date}}</td>
+        </tr>
+    </table> 
+    <br>
+    <br>
+     
+    
+</body>
+</html>
+
